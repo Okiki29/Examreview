@@ -4,21 +4,22 @@
 
 ### Task 1 — /40
 **My mark:**
-
+10/40
 **Why I awarded this mark:**
-
+I awarded this mark because I didn't really finish this part of the code. 
+but i was able to complete some parts of the workshop.java by creating the member classes. 
 ### Task 2 — /40
 **My mark:**
-
+0/40
 **Why I awarded this mark:**
-
+I gave this mark because I didn't get to this point of the coding test.
 ### Task 3 — /20
 **My mark:**
-
+0/20
 **Why I awarded this mark:**
-
+I gave this mark because i didnt get to this point of the coding test. 
 **Total self-assessed grade:** /100
-
+10/100
 ## 2. Corrections and Improvements
 
 Describe two or three important problems you identified
