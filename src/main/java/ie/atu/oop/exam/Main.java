@@ -19,13 +19,29 @@ public class Main {
         System.out.print("Enter number of registration attempts: ");
         int attempts = Integer.parseInt(scanner.nextLine());
 
+        int accepted = 0;
+        int rejected = 0;
+
         for (int i = 1; i <= attempts; i++) {
             System.out.print("Enter student ID: ");
             String id = scanner.nextLine().trim();
 
             String result = workshop.register(id);
             System.out.println(id + " -> " + result);
+
+            if (result.equals("accepted")) {
+                accepted++;
+            } else {
+                rejected++;
+            }
         }
+
+        // Registration report
+        System.out.println("\n--- Registration Report ---");
+        System.out.println("Registered IDs: " + workshop.getRegisteredIds());
+        System.out.println("Total accepted: " + accepted);
+        System.out.println("Total rejected: " + rejected);
+        System.out.println("Places remaining: " + workshop.getPlacesRemaining());
 
         scanner.close();
     }
