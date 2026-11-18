@@ -36,7 +36,6 @@ public class Main {
             }
         }
 
-        // Registration report
         System.out.println("\n--- Registration Report ---");
         System.out.println("Registered IDs: " + workshop.getRegisteredIds());
         System.out.println("Total accepted: " + accepted);
