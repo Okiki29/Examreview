@@ -16,6 +16,17 @@ public class Main {
         System.out.println("Workshop name: " + workshop.getWorkshopName()
                 + "   Capacity: " + workshop.getCapacity());
 
+        System.out.print("Enter number of registration attempts: ");
+        int attempts = Integer.parseInt(scanner.nextLine());
+
+        for (int i = 1; i <= attempts; i++) {
+            System.out.print("Enter student ID: ");
+            String id = scanner.nextLine().trim();
+
+            String result = workshop.register(id);
+            System.out.println(id + " -> " + result);
+        }
+
         scanner.close();
     }
 }

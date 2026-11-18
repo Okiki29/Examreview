@@ -15,5 +15,16 @@ package ie.atu.oop.exam;
 
         public String getWorkshopName() { return workshopName; }
         public int getCapacity() { return capacity; }
+
+        public String register(String studentId) {
+            if (registeredIds.contains(studentId)) {
+                return "duplicate";
+            }
+            if (registeredIds.size() >= capacity) {
+                return "workshop full";
+            }
+            registeredIds.add(studentId);
+            return "accepted";
+        }
     }
 
