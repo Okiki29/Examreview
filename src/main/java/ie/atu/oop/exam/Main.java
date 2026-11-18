@@ -15,6 +15,11 @@ public class Main {
         System.out.print("Enter age: ");
         int age = Integer.parseInt(scanner.nextLine());
 
+        if (age <= 0) {
+            System.out.println("Invalid age. Age must be greater than zero.");
+            return null;
+        }
+
         return new Member(id, name, age);
     }
     public static void main(String[] args) {
@@ -57,7 +62,20 @@ public class Main {
                 }
 
             } else if (choice == 4) {
-                System.out.println("Remove Member will be implemented in Task 3.");
+                System.out.print("Enter member ID to remove: ");
+                String id = scanner.nextLine();
+                boolean removed = false;
+                for (int i = 0; i < members.size(); i++) {
+                    if (members.get(i).getMemberId().equals(id)) {
+                        members.remove(i);
+                        removed = true;
+                        System.out.println("Member removed.");
+                        break;
+                    }
+                }
+                if (!removed) {
+                    System.out.println("No member with that ID exists.");
+                }
 
             } else if (choice == 5) {
                 System.out.println("Goodbye!");
