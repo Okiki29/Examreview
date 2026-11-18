@@ -19,11 +19,54 @@ public class Main {
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        ArrayList<Member> members = new ArrayList<>();
+        int choice = 0;
 
-        Member m = readMember(scanner);
-        m.displayDetails();
+        while (choice != 5) {
+            System.out.println("\n1. Add Member   2. Display All Members   3. Search by ID");
+            System.out.println("4. Remove Member   5. Exit");
+            System.out.print("Choose an option: ");
+            choice = Integer.parseInt(scanner.nextLine());
 
+            if (choice == 1) {
+                members.add(readMember(scanner));
+                System.out.println("Member added.");
+
+            } else if (choice == 2) {
+                if (members.isEmpty()) {
+                    System.out.println("No members stored.");
+                } else {
+                    for (Member m : members) {
+                        m.displayDetails();
+                    }
+                }
+
+            } else if (choice == 3) {
+                System.out.print("Enter member ID to search: ");
+                String id = scanner.nextLine();
+                boolean found = false;
+                for (Member m : members) {
+                    if (m.getMemberId().equals(id)) {
+                        m.displayDetails();
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) {
+                    System.out.println("Member not found.");
+                }
+
+            } else if (choice == 4) {
+                System.out.println("Remove Member will be implemented in Task 3.");
+
+            } else if (choice == 5) {
+                System.out.println("Goodbye!");
+
+            } else {
+                System.out.println("Invalid option.");
+            }
+        }
         scanner.close();
-
     }
+
 }

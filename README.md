@@ -26,6 +26,9 @@ Describe two or three important problems you identified
 in your original code. Explain what you changed and
 why it works now.
 
+I wont say i had to change much because i didnt really do much in the coding test but i had to add so many thing to my 
+test including adding private fields 
+
 ## 3. Reflection
 
 **What did you understand during the examination
