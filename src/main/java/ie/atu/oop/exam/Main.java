@@ -1,90 +1,21 @@
 package ie.atu.oop.exam;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-
-    static Member readMember(Scanner scanner) {
-        System.out.print("Enter member ID: ");
-        String id = scanner.nextLine();
-
-        System.out.print("Enter name: ");
-        String name = scanner.nextLine();
-
-        System.out.print("Enter age: ");
-        int age = Integer.parseInt(scanner.nextLine());
-
-        if (age <= 0) {
-            System.out.println("Invalid age. Age must be greater than zero.");
-            return null;
-        }
-
-        return new Member(id, name, age);
-    }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ArrayList<Member> members = new ArrayList<>();
-        int choice = 0;
 
-        while (choice != 5) {
-            System.out.println("\n1. Add Member   2. Display All Members   3. Search by ID");
-            System.out.println("4. Remove Member   5. Exit");
-            System.out.print("Choose an option: ");
-            choice = Integer.parseInt(scanner.nextLine());
+        System.out.print("Enter workshop name: ");
+        String name = scanner.nextLine();
 
-            if (choice == 1) {
-                members.add(readMember(scanner));
-                System.out.println("Member added.");
+        System.out.print("Enter capacity: ");
+        int capacity = Integer.parseInt(scanner.nextLine());
 
-            } else if (choice == 2) {
-                if (members.isEmpty()) {
-                    System.out.println("No members stored.");
-                } else {
-                    for (Member m : members) {
-                        m.displayDetails();
-                    }
-                }
+        Workshop workshop = new Workshop(name, capacity);
+        System.out.println("Workshop name: " + workshop.getWorkshopName()
+                + "   Capacity: " + workshop.getCapacity());
 
-            } else if (choice == 3) {
-                System.out.print("Enter member ID to search: ");
-                String id = scanner.nextLine();
-                boolean found = false;
-                for (Member m : members) {
-                    if (m.getMemberId().equals(id)) {
-                        m.displayDetails();
-                        found = true;
-                        break;
-                    }
-                }
-                if (!found) {
-                    System.out.println("Member not found.");
-                }
-
-            } else if (choice == 4) {
-                System.out.print("Enter member ID to remove: ");
-                String id = scanner.nextLine();
-                boolean removed = false;
-                for (int i = 0; i < members.size(); i++) {
-                    if (members.get(i).getMemberId().equals(id)) {
-                        members.remove(i);
-                        removed = true;
-                        System.out.println("Member removed.");
-                        break;
-                    }
-                }
-                if (!removed) {
-                    System.out.println("No member with that ID exists.");
-                }
-
-            } else if (choice == 5) {
-                System.out.println("Goodbye!");
-
-            } else {
-                System.out.println("Invalid option.");
-            }
-        }
         scanner.close();
     }
-
 }
